@@ -6,13 +6,13 @@ function handleTabClick(e) {
     tabPanels.forEach(panel=>{
         panel.hidden = true;
     });
-    tabs.forEach(tab=>{
+    tabButtons.forEach(tab=>{
         // tab.ariaSelected = false;
         tab.setAttribute('aria-selected', false)
     })
     e.currentTarget.setAttribute('aria-selected', true)
-    const {id} = e.currentTarget.id;
-    const tabPanel = tabs.querySelector(`#${id}`);
+    const {id} = e.currentTarget;
+    const tabPanel = tabs.querySelector(`[aria-labelledby="${id}"]`);
     tabPanel.hidden = false;
 }
 
