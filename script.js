@@ -7,8 +7,11 @@ function handleTabClick(e) {
         panel.hidden = true;
     });
     tabs.forEach(tab=>{
-        tab.hidd
+        // tab.ariaSelected = false;
+        tab.setAttribute('aria-selected', false)
     })
+    e.currentTarget.setAttribute('aria-selected', true)
+    const {id} = e.currentTarget.id;
 }
 
 tabButtons.forEach(button=> button.addEventListener("click", handleTabClick));
