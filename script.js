@@ -14,11 +14,9 @@ function handleTabClick(e) {
     const {id} = e.currentTarget;
     // const tabPanel = tabs.querySelector(`[aria-labelledby="${id}"]`);
     // tabPanel.hidden = false;
-    tabPanels.find(panel=> {
-        if(panel.getAttribute(`aria-labeledby`) === id) {
-            return true;
-        } 
-    })
+    const tabPanel = tabPanels.find(
+        panel=> panel.getAttribute(`aria-labelledby`) === id);
+    tabPanel.hidden = false;
 }
 
 tabButtons.forEach(button=> button.addEventListener("click", handleTabClick));
