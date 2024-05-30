@@ -12,6 +12,8 @@ function handleTabClick(e) {
     })
     e.currentTarget.setAttribute('aria-selected', true)
     const {id} = e.currentTarget.id;
+    const tabPanel = tabs.querySelector(`#${id}`);
+    tabPanel.hidden = false;
 }
 
 tabButtons.forEach(button=> button.addEventListener("click", handleTabClick));
